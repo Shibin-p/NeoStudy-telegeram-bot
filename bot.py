@@ -5,6 +5,8 @@ from telegram.ext import (
     ApplicationBuilder, CommandHandler, CallbackQueryHandler,
     MessageHandler, ContextTypes, filters
 )
+from fastapi import FastAPI
+from threading import Thread
 
 # Bot Config
 TOKEN = "7734149754:AAHpN0BAJecVelJ6ra-7xmGScjLVPMrqZgA"
@@ -210,7 +212,16 @@ async def suggestions(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     save(SUGGESTION_FILE, sug)
     await update.message.reply_text("✅ Thank you for your suggestion!")
     await ctx.bot.send_message(chat_id=ADMIN_ID, text=f"📩 Suggestion from {entry['from']}:\n{entry['text']}")
+# FASTAPI WEB SERVER FOR UPTIMEROBOT
+app_web = FastAPI()
 
+@app_web.get("/ping")
+async def ping():
+    return {"status": "✅ NeoStudy Bot is alive!"}
+
+def start_fastapi():
+    import uvicorn
+    uvicorn.run(app_web, host="0.0.0.0", port=10000)
 # MAIN
 app = ApplicationBuilder().token(TOKEN).build()
 app.add_handler(CommandHandler("start", start))
@@ -222,4 +233,10 @@ app.add_handler(MessageHandler(filters.Document.ALL, files))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, suggestions))
 
 print("🤖 Bot running …")
-app.run_polling()
+
+# Start FastAPI server in background thread
+Thread(target=start_fastapi).start()
+
+# Start Telegram polling
+import asyncio
+asyncio.run(app.run_polling())
