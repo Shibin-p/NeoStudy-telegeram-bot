@@ -240,3 +240,17 @@ Thread(target=start_fastapi).start()
 # Start Telegram polling
 import asyncio
 asyncio.run(app.run_polling())
+# --- PING SERVER SETUP FOR UPTIMEROBOT ---
+from flask import Flask
+import threading
+
+web_app = Flask('')
+
+@web_app.route('/ping')
+def ping():
+    return "OK", 200
+
+def run():
+    web_app.run(host='0.0.0.0', port=8080)
+
+threading.Thread(target=run).start()
