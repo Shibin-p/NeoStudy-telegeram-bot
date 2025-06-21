@@ -1,3 +1,5 @@
+import sys
+print("🐍 Python version:", sys.version)
 import os, json
 from datetime import datetime
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
