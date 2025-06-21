@@ -234,23 +234,9 @@ app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, suggestions))
 
 print("🤖 Bot running …")
 
-# Start FastAPI server in background thread
-Thread(target=start_fastapi).start()
+if __name__ == "__main__":
+    # Start FastAPI server in a thread
+    Thread(target=start_fastapi).start()
 
-# Start Telegram polling
-import asyncio
-asyncio.run(app.run_polling())
-# --- PING SERVER SETUP FOR UPTIMEROBOT ---
-from flask import Flask
-import threading
-
-web_app = Flask('')
-
-@web_app.route('/ping')
-def ping():
-    return "OK", 200
-
-def run():
-    web_app.run(host='0.0.0.0', port=8080)
-
-threading.Thread(target=run).start()
+    # Start Telegram bot
+    app.run_polling()
