@@ -1,0 +1,28 @@
+{
+  "sem1": {
+    "Maths": {
+      "Notes": "sample_file_id_1",
+      "PYQs": "sample_file_id_2"
+    },
+    "BCE": {
+      "Notes": "BQACAgUAAxkBAAMLaFVS-D9AkKXEcFaIOAfIjfqZAZkAApoXAAIfKqlWwnv4Jq_WcVo2BA"
+    }
+  },
+  "sem2": {
+    "DBMS": {
+      "Notes": "sample_file_id_3",
+      "Videos": "sample_file_id_4"
+    }
+  },
+  "": {},
+  "sem 3": {
+    "LSD": {
+      "Syllabus": [],
+      "Notes": [],
+      "Important Topics": [],
+      "Voice Recordings": [],
+      "Video Classes": [],
+      "PYQs": []
+    }
+  }
+}
