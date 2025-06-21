@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: neostudy-bot
+    env: python
+    buildCommand: ""
+    startCommand: python bot.py
+    runtime: python-3.11
