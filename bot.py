@@ -223,7 +223,7 @@ def start_fastapi():
     import uvicorn
     uvicorn.run(app_web, host="0.0.0.0", port=10000)
 # MAIN
-app = Applicationbuilder().token(TOKEN).build()
+app = ApplicationBuilder().token(TOKEN).build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("newsemester", newsemester))
 app.add_handler(CommandHandler("newsubject", newsubject))
