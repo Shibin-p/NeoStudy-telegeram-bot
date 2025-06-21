@@ -457,7 +457,7 @@ async def suggestions(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
 # FASTAPI WEB SERVER FOR UPTIMEROBOT
 app_web = FastAPI()
 
-@app_web.get("/ping")
+@app_web.api_route("/ping", methods=["GET", "HEAD"])
 async def ping():
     return {"status": "✅ NeoStudy Bot is alive!"}
 
