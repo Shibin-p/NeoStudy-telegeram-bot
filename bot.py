@@ -21,6 +21,14 @@ if not firebase_admin._apps:
     firebase_admin.initialize_app(cred, {
         'databaseURL': 'https://neostudy-bot-default-rtdb.firebaseio.com/'
     })
+    # ✅ Check and create '/data' node if not present
+root_ref = db.reference('/')
+existing_data = root_ref.get()
+if not existing_data or 'data' not in existing_data:
+    root_ref.child('data').set({})
+    print("✅ '/data' node created successfully.")
+else:
+    print("✅ '/data' node already exists.")
 async def set_menu_button(application):
     await application.bot.set_chat_menu_button(
         menu_button=MenuButtonCommands()
