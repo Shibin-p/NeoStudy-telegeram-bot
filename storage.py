@@ -1,31 +1,50 @@
 import json
 import os
-import subprocess
 from datetime import datetime
 
-# Auto push content.json to GitHub
-def save_to_json(data: dict):
-    with open("content.json", "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
+DATA_FILE = "content.json"
 
-    # Save timestamped backup
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    backup_file = f"backups/content_{timestamp}.json"
-    os.makedirs("backups", exist_ok=True)
-    with open(backup_file, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
-
-    push_to_git()
-
-def push_to_git():
+def load_from_json(collection_name):
     try:
-        subprocess.run(["git", "config", "--global", "user.name", os.getenv("GIT_USERNAME")], check=True)
-        subprocess.run(["git", "config", "--global", "user.email", os.getenv("GIT_EMAIL")], check=True)
+        if not os.path.exists(DATA_FILE):
+            return {}
 
-        subprocess.run(["git", "add", "content.json"], check=True)
-        subprocess.run(["git", "add", "backups"], check=True)
-        subprocess.run(["git", "commit", "-m", "🔄 Auto-update content.json"], check=True)
-        subprocess.run(["git", "push", f"https://{os.getenv('GIT_TOKEN')}@github.com/{os.getenv('GIT_USERNAME')}/neostudybot.git"], check=True)
-        print("✅ Pushed content.json to GitHub.")
-    except subprocess.CalledProcessError as e:
-        print("❌ Git push failed:", e)
+        with open(DATA_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return data.get(collection_name, {})
+    except Exception as e:
+        print(f"❌ Error loading {collection_name} from JSON: {e}")
+        return {}
+
+def save_to_json(collection_name, new_data):
+    try:
+        data = {}
+
+        # Load existing data
+        if os.path.exists(DATA_FILE):
+            with open(DATA_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+        # Update collection
+        data[collection_name] = new_data
+
+        # Write back to file
+        with open(DATA_FILE, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+
+        print(f"✅ Saved to content.json: {collection_name}")
+        
+        # Auto push changes to GitHub (optional backup)
+        auto_commit_to_github()
+
+    except Exception as e:
+        print(f"❌ Error saving {collection_name} to JSON: {e}")
+
+def auto_commit_to_github():
+    try:
+        os.system("git add content.json")
+        os.system(f'git commit -m "📝 Auto-backup on {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"')
+        os.system("git push origin main")
+        print("📤 Auto backup pushed to GitHub.")
+    except Exception as e:
+        print(f"❌ GitHub backup failed: {e}")
