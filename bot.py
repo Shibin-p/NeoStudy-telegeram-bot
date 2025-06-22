@@ -170,13 +170,12 @@ async def cb(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         await q.message.reply_text("💬 Send your suggestion now. It will be sent to the admin.")
 
     elif cbk == "backup" and q.from_user.id == ADMIN_ID:
-    for fname in ["data.json", "logs.json", "suggestions.json"]:
-        if os.path.exists(fname):
-            with open(fname, "rb") as f:
-                await q.message.reply_document(InputFile(f, filename=fname))
-        else:
-            await q.message.reply_text(f"⚠️ {fname} not found.")
-
+        for fname in ["data.json", "logs.json", "suggestions.json"]:
+            if os.path.exists(fname):
+                with open(fname, "rb") as f:
+                    await q.message.reply_document(InputFile(f, filename=fname))
+            else:
+                await q.message.reply_text(f"⚠️ {fname} not found.")
 # Commands
 async def newsemester(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     name = " ".join(ctx.args)
