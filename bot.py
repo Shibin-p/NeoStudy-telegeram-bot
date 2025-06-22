@@ -9,6 +9,13 @@ from telegram.ext import (
 )
 from fastapi import FastAPI
 from threading import Thread
+from telegram import MenuButtonCommands
+from telegram.constants import ChatType
+
+async def set_menu_button(application):
+    await application.bot.set_chat_menu_button(
+        menu_button=MenuButtonCommands()
+    )
 
 # Bot Config
 TOKEN = "7734149754:AAHpN0BAJecVelJ6ra-7xmGScjLVPMrqZgA"
@@ -201,6 +208,10 @@ async def files(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
 async def finish(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     ctx.user_data["upload"] = False
     await update.message.reply_text("✅ Upload session ended.")
+
+# 🔹 Suggestion command from menu
+async def suggest_command(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("💬 Send your suggestion now. It will be sent to the admin.")
 
 async def suggestions(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     entry = {
@@ -226,6 +237,7 @@ def start_fastapi():
     uvicorn.run(app_web, host="0.0.0.0", port=10000)
 # MAIN
 app = ApplicationBuilder().token(TOKEN).build()
+app.post_init = set_menu_button
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("newsemester", newsemester))
 app.add_handler(CommandHandler("newsubject", newsubject))
@@ -233,6 +245,7 @@ app.add_handler(CommandHandler("finish", finish))
 app.add_handler(CallbackQueryHandler(cb))
 app.add_handler(MessageHandler(filters.Document.ALL, files))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, suggestions))
+app.add_handler(CommandHandler("suggest", suggest_command))
 
 print("🤖 Bot running …")
 
@@ -249,6 +262,13 @@ from telegram.ext import (
 )
 from fastapi import FastAPI
 from threading import Thread
+from telegram import MenuButtonCommands
+from telegram.constants import ChatType
+
+async def set_menu_button(application):
+    await application.bot.set_chat_menu_button(
+        menu_button=MenuButtonCommands()
+    )
 
 # Bot Config
 TOKEN = "7734149754:AAHpN0BAJecVelJ6ra-7xmGScjLVPMrqZgA"
@@ -442,6 +462,10 @@ async def finish(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     ctx.user_data["upload"] = False
     await update.message.reply_text("✅ Upload session ended.")
 
+# 🔹 Suggestion command from menu
+async def suggest_command(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("💬 Send your suggestion now. It will be sent to the admin.")
+
 async def suggestions(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     entry = {
         "from": update.effective_user.full_name,
@@ -466,6 +490,7 @@ def start_fastapi():
     uvicorn.run(app_web, host="0.0.0.0", port=10000)
 # MAIN
 app = ApplicationBuilder().token(TOKEN).build()
+app.post_init = set_menu_button
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("newsemester", newsemester))
 app.add_handler(CommandHandler("newsubject", newsubject))
@@ -473,6 +498,7 @@ app.add_handler(CommandHandler("finish", finish))
 app.add_handler(CallbackQueryHandler(cb))
 app.add_handler(MessageHandler(filters.Document.ALL, files))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, suggestions))
+app.add_handler(CommandHandler("suggest", suggest_command))
 
 print("🤖 Bot running …")
 
