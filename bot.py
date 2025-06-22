@@ -53,7 +53,7 @@ async def start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     "📖 Notes | ❓ PYQs | 🎥 Video Classes | 🎧 Voice Notes & more!\n\n"
     "🛠 Built by *Shibin P.*\n"
     "👇 Tap *Start* to begin!\n\n"
-    "_(You can restart the bot anytime by typing   /start.)_"
+    "_(You can restart the bot anytime by typing   /start or using Menu button)_"
 )
     kb = [[InlineKeyboardButton("🚀 Start", callback_data="sem_menu")],
           [InlineKeyboardButton("💬 Suggestion", callback_data="suggest")]]
