@@ -1,4 +1,5 @@
 import os, json, subprocess
+from datetime import datetime  # ✅ Fix: missing import
 
 GIT_TOKEN = os.getenv("GITHUB_TOKEN")  # needs Write permission to repo
 GIT_REPO = os.getenv("GITHUB_REPO", "")  # e.g. "YourUsername/NeoStudy-telegram-bot"
@@ -36,3 +37,9 @@ def save_to_json(name, data):
     subprocess.run(["git", "commit", "-m", msg], check=False)
     remote = f"https://x-access-token:{GIT_TOKEN}@github.com/{GIT_REPO}.git"
     subprocess.run(["git", "push", remote, BRANCH], check=False)
+
+def load_from_json(name):
+    """
+    Load the <name>.json file. Returns a dict.
+    """
+    return _load_json_file(f"{name}.json")
