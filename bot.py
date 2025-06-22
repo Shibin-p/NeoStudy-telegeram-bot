@@ -11,6 +11,18 @@ from telegram.ext import (
 from fastapi import FastAPI
 from threading import Thread
 from storage import load_from_json, save_to_json
+import subprocess
+
+def init_git_if_missing():
+    if not os.path.exists(".git"):
+        subprocess.run(["git", "init"], check=False)
+        subprocess.run(["git", "config", "user.name", "NeoStudyBot"], check=False)
+        subprocess.run(["git", "config", "user.email", "bot@example.com"], check=False)
+        remote_url = f"https://x-access-token:{os.getenv('GITHUB_TOKEN')}@github.com/{os.getenv('GITHUB_REPO')}.git"
+        subprocess.run(["git", "remote", "add", "origin", remote_url], check=False)
+        subprocess.run(["git", "pull", "origin", os.getenv("GITHUB_BRANCH", "main")], check=False)
+
+init_git_if_missing()
 
 # Bot Config
 TOKEN = os.getenv("BOT_TOKEN")
