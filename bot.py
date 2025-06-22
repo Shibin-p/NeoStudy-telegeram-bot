@@ -9,26 +9,18 @@ from telegram.ext import (
     ApplicationBuilder, CommandHandler, CallbackQueryHandler,
     MessageHandler, ContextTypes, filters
 )
-import firebase_admin
-from firebase_admin import credentials, db
+
 from fastapi import FastAPI
 from threading import Thread
 from telegram import MenuButtonCommands
 from telegram.constants import ChatType
-# 🔹 Firebase Initialization
-if not firebase_admin._apps:
-    cred = credentials.Certificate("firebase_key.json")
-    firebase_admin.initialize_app(cred, {
-        'databaseURL': 'https://neostudy-bot-default-rtdb.firebaseio.com/'
-    })
+from pymongo import MongoClient
+
+# MongoDB connection
+client = MongoClient("mongodb+srv://shibinp:shibin2244@neostudy.37rdk4m.mongodb.net/?retryWrites=true&w=majority&appName=NeoStudy")
+db_mongo = client["neostudybot"]  # DB name
     # ✅ Check and create '/data' node if not present
-root_ref = db.reference('/')
-existing_data = root_ref.get()
-if not existing_data or 'data' not in existing_data:
-    root_ref.child('data').set({})
-    print("✅ '/data' node created successfully.")
-else:
-    print("✅ '/data' node already exists.")
+
 async def set_menu_button(application):
     await application.bot.set_chat_menu_button(
         menu_button=MenuButtonCommands()
@@ -42,22 +34,23 @@ ADMIN_ID = 1457980555
 
 MATERIAL_TYPES = ["Syllabus", "Notes", "Important Topics", "Voice Recordings", "Video Classes", "PYQs"]
 
-def load_from_firebase(path):
-    ref = db.reference(path)
-    data = ref.get()
-    return data if data else {}
+def load_from_mongo(collection_name):
+    collection = db_mongo[collection_name]
+    doc = collection.find_one({"_id": "main"})
+    return doc if doc else {}
 
-def save_to_firebase(path, data):
-    ref = db.reference(path)
-    ref.set(data)
+def save_to_mongo(collection_name, data):
+    collection = db_mongo[collection_name]
+    data["_id"] = "main"  # single document
+    collection.replace_one({"_id": "main"}, data, upsert=True)
 def log_user(user):
-    logs = load_from_firebase("/logs").get("logs", [])
+    logs = load_from_mongo("logs").get("logs", [])
     logs.append({
         "user_id": user.id,
         "name": user.full_name,
         "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     })
-    save_to_firebase("/logs", {"logs": logs})
+    save_to_mongo("logs", {"logs": logs})
     
 
 async def start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
@@ -77,7 +70,7 @@ async def start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
 async def cb(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     q = update.callback_query
     await q.answer()
-    d = load_from_firebase("/data") or {}
+    d = load_from_mongo("data") or {}
     ud = ctx.user_data
     cbk = q.data
 
@@ -161,7 +154,7 @@ async def cb(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         sem, subj, typ = ud["sem"], ud["sub"], ud["type"]
         try:
            d[sem][subj][typ].pop(idx)
-           save_to_firebase("/data", d)
+           save_to_mongo("data", d)
            await q.message.reply_text("✅ File deleted.")
         except:
            await q.message.reply_text("⚠️ Delete failed.")
@@ -175,18 +168,18 @@ async def cb(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         sem = ud["sem"]
         d.pop(sem, None)
         
-        save_to_firebase("/data", d)
+        save_to_mongo("data", d)
         await q.message.reply_text(f"✅ Semester *{sem}* deleted.", parse_mode="Markdown")
 
     elif cbk == "del_sub":
         sem, subj = ud["sem"], ud["sub"]
         d.get(sem, {}).pop(subj, None)
         
-        save_to_firebase("/data", d)
+        save_to_mongo("data", d)
         await q.message.reply_text(f"✅ Subject *{subj}* deleted.", parse_mode="Markdown")
 
     elif cbk == "log":
-        logs = load_from_firebase("/logs").get("logs", [])
+        logs = load_from_mongo("logs").get("logs", [])
         msg = "📄 *User Log (latest 20)*\n\n"
         for e in logs[-20:]:
             msg += f"👤 {e['name']} | {e['user_id']} | {e['time']}\n"
@@ -197,11 +190,11 @@ async def cb(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
 
 async def newsemester(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     name = " ".join(ctx.args)
-    data = load_from_firebase("/data") or {}
+    data = load_from_mongo("data") or {}
 
     data[name] = {}
     
-    save_to_firebase("/data", data)
+    save_to_mongo("data", data)
     await update.message.reply_text(f"✅ Semester *{name}* added.", parse_mode="Markdown")
 
 async def newsubject(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
@@ -210,23 +203,23 @@ async def newsubject(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     if not sem:
         await update.message.reply_text("⚠️ Select semester first.")
         return
-    data = load_from_firebase("/data") or {}
+    data = load_from_mongo("data") or {}
 
     data.setdefault(sem, {})[name] = {t: [] for t in MATERIAL_TYPES}
     
-    save_to_firebase("/data", data)
+    save_to_mongo("data", data)
     await update.message.reply_text(f"✅ Subject *{name}* added.", parse_mode="Markdown")
 
 async def files(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     if ctx.user_data.get("upload"):
         sem, subj, typ = ctx.user_data["sem"], ctx.user_data["sub"], ctx.user_data["type"]
-        data = load_from_firebase("/data") or {}
+        data = load_from_mongo("data") or {}
 
         data.setdefault(sem, {}).setdefault(subj, {}).setdefault(typ, []).append(
             update.message.document.file_id
         )
         
-        save_to_firebase("/data", data)
+        save_to_mongo("data", data)
         await update.message.reply_text("✅ File saved.")
 
 async def finish(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
@@ -244,9 +237,9 @@ async def suggestions(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         "text": update.message.text,
         "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     }
-    sug = load_from_firebase("/suggestions") or {}
+    sug = load_from_mongo("suggestions") or {}
     sug.setdefault("suggestions", []).append(entry)
-    save_to_firebase("/suggestions", sug)
+    save_to_mongo("suggestions", sug)
     await update.message.reply_text("✅ Thank you for your suggestion!")
     await ctx.bot.send_message(chat_id=ADMIN_ID, text=f"📩 Suggestion from {entry['from']}:\n{entry['text']}")
 # FASTAPI WEB SERVER FOR UPTIMEROBOT
