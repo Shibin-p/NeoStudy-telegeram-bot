@@ -25,18 +25,28 @@ def save_to_json(name, data):
     """
     fname = f"{name}.json"
     _save_json_file(fname, data)
+    print(f"✅ Saved {fname} locally.")
 
-    if not GIT_TOKEN or not GIT_REPO:
-        return  # skip Git push if env var missing
+    if not GIT_TOKEN:
+        print("❌ GITHUB_TOKEN is missing! Skipping Git push.")
+        return
+    if not GIT_REPO:
+        print("❌ GITHUB_REPO is missing! Skipping Git push.")
+        return
 
-    # Git commit & push
-    subprocess.run(["git", "config", "user.name", "BotUser"], check=False)
-    subprocess.run(["git", "config", "user.email", "bot@example.com"], check=False)
-    subprocess.run(["git", "add", fname], check=False)
-    msg = f"Auto-save '{name}' at " + datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    subprocess.run(["git", "commit", "-m", msg], check=False)
-    remote = f"https://x-access-token:{GIT_TOKEN}@github.com/{GIT_REPO}.git"
-    subprocess.run(["git", "push", remote, BRANCH], check=False)
+    print("🔁 Trying to commit and push to GitHub…")
+
+    try:
+        subprocess.run(["git", "config", "user.name", "BotUser"], check=False)
+        subprocess.run(["git", "config", "user.email", "bot@example.com"], check=False)
+        subprocess.run(["git", "add", fname], check=False)
+        msg = f"Auto-save '{name}' at " + datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        subprocess.run(["git", "commit", "-m", msg], check=False)
+        remote = f"https://x-access-token:{GIT_TOKEN}@github.com/{GIT_REPO}.git"
+        subprocess.run(["git", "push", remote, BRANCH], check=False)
+        print(f"✅ Pushed {fname} to GitHub ({GIT_REPO}).")
+    except Exception as e:
+        print(f"❌ Git push failed: {e}")
 
 def load_from_json(name):
     """
