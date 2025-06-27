@@ -97,6 +97,44 @@
       "Voice Recordings": [],
       "Video Classes": [],
       "PYQs": []
+    },
+    "CP ( Programming in C )": {
+      "Syllabus": [
+        "BQACAgUAAxkBAAIC_2hYR9IwlFLvYGHoVMxZbEGs9KMwAAKqFQACOIvBVnpCGoQD_QlQNgQ"
+      ],
+      "Notes": [
+        "BQACAgUAAxkBAAICt2hYQgZ4C8lWeNtvRSasCAABKFhIHAACiBUAAjiLwVbSAuwGRitR_zYE",
+        "BQACAgUAAxkBAAICuGhYQgaCl9ACkX_RYEg0fm7eW-rmAAKJFQACOIvBVifV7ZuQjCvBNgQ",
+        "BQACAgUAAxkBAAICuWhYQgb4LRJYJpvCLNcTWi-2xvS6AAKKFQACOIvBVgXJYK46np0yNgQ",
+        "BQACAgUAAxkBAAICumhYQgf4H9MHT3n1Gf5XCY226ZRkAAKLFQACOIvBVl75RhndfiNqNgQ",
+        "BQACAgUAAxkBAAICvWhYQglV_SrvOUBCAizEmpTb52ioAAKMFQACOIvBVsAaVWepjS2KNgQ",
+        "BQACAgUAAxkBAAICwWhYQg3n0ao5Rmpbbawo2fooXjwkAAKNFQACOIvBVlJm7El1VGW6NgQ",
+        "BQACAgUAAxkBAAICw2hYQhA7FJsxGLD3_zrR9sn24vOVAAKOFQACOIvBVm42Z8Aa9HMpNgQ",
+        "BQACAgUAAxkBAAICxWhYQhMn-UTYGCLJ87cljU7fol9YAAKPFQACOIvBVkwrBMIJJlFiNgQ",
+        "BQACAgUAAxkBAAICx2hYQhafcTnlt_wPITQM34PfXYU1AAKQFQACOIvBVh9BVInfGpeCNgQ",
+        "BQACAgUAAxkBAAICyWhYQhpHHZ5ES1BUOOFXS2q3W8HOAAKRFQACOIvBVrkIUbKTk7jbNgQ",
+        "BQACAgUAAxkBAAICymhYQhrcqDlQz7e3_EjuSr7fzGdKAAKSFQACOIvBVjAv9zwtVNqlNgQ"
+      ],
+      "Important Topics": [
+        "BQACAgUAAxkBAAIC7WhYQ0yO45tZL5ICs-rbkpQ-warUAAKgFQACOIvBViUdFlPlLIuJNgQ"
+      ],
+      "Voice Recordings": [],
+      "Video Classes": [],
+      "PYQs": [
+        "BQACAgUAAxkBAAIC0GhYQkk-PNstY0cOcpk26KliflafAAKTFQACOIvBVt-zFZut8TPENgQ",
+        "BQACAgUAAxkBAAIC0WhYQkkiqNLngnr62uDm4uwIk-ktAAKUFQACOIvBVqA0kE719ZRANgQ",
+        "BQACAgUAAxkBAAIC0mhYQkmXZMelDhohp4PrsDDZknb8AAKVFQACOIvBVvJD3QYAAZtb_jYE",
+        "BQACAgUAAxkBAAIC02hYQkq-NBuk-VINg38N3hYIb52QAAKWFQACOIvBVsgssgl44VqSNgQ",
+        "BQACAgUAAxkBAAIC1GhYQkp8NCiRHY2peVxpWqvukSm7AAKXFQACOIvBVvYS0b81Y1h7NgQ",
+        "BQACAgUAAxkBAAIC1WhYQkr4quh7Ose1nULjIyKee_LxAAKYFQACOIvBVohc4riAWfCWNgQ",
+        "BQACAgUAAxkBAAIC1mhYQkphXsWCyyN_CEgLg-jyjDKbAAKZFQACOIvBVgpxavut0BopNgQ",
+        "BQACAgUAAxkBAAIC12hYQkpuvoYukI5jS_jZs3u-ffdUAAKaFQACOIvBVg3vUnmW486mNgQ",
+        "BQACAgUAAxkBAAIC2GhYQkrqIpiJKlXSIlqYeuGpTYI3AAKbFQACOIvBVjnJQlUjo42ONgQ",
+        "BQACAgUAAxkBAAIC2mhYQksnxU93B05Y_ymrXOfY8uK8AAKcFQACOIvBVuKJ8PYSRrdZNgQ",
+        "BQACAgUAAxkBAAIC22hYQksLkgRKh_wSCN9-sWkGxJsHAAKdFQACOIvBVh18m9c79EcPNgQ",
+        "BQACAgUAAxkBAAIC3GhYQkvZ4WZwcVnYXTTR_wlVylsqAAKeFQACOIvBVprj3KH0gPwxNgQ",
+        "BQACAgUAAxkBAAIC3WhYQktJN1k2RR-hwSu1BhBIEK0LAAKfFQACOIvBVrxTvoRjgQ5kNgQ"
+      ]
     }
   },
   "S3": {
@@ -202,7 +240,13 @@
   "S5": {
     "Formal languages and Automata Theory": {
       "Syllabus": [],
-      "Notes": [],
+      "Notes": [
+        "BQACAgUAAxkBAAIBIWhXiMnJJK_YvkXNQxvCQ1bUkzZqAALpGwACQmPAVu-p0T29iwUVNgQ",
+        "BQACAgUAAxkBAAIBI2hXiM0JrtbCOWJYAAFCl6iklTTdpwAC6hsAAkJjwFYh9z3mvxcC0zYE",
+        "BQACAgUAAxkBAAIBJWhXiNPEn9Ov-6VCV4fvZ8pRWgZBAALsGwACQmPAVkdi6-DjvU2DNgQ",
+        "BQACAgUAAxkBAAIBJ2hXiNY7b5TjAAH5vxRAGXytNleCtAAC7RsAAkJjwFYj_j5OEk5KETYE",
+        "BQACAgUAAxkBAAIBKWhXiNeIWb41hgfVwMjZgNjlSYywAALuGwACQmPAVnEKpv00Ip3WNgQ"
+      ],
       "Important Topics": [],
       "Voice Recordings": [],
       "Video Classes": [],
