@@ -1,5 +1,7 @@
 import os
 import json
+import asyncio
+import pytz
 from datetime import datetime
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, MenuButtonCommands, InputFile
 from telegram.ext import (
@@ -9,6 +11,8 @@ from telegram.ext import (
 from fastapi import FastAPI
 from threading import Thread
 from storage import load_from_json, save_to_json
+
+IST = pytz.timezone("Asia/Kolkata")
 
 # Bot Config
 TOKEN = os.getenv("BOT_TOKEN")
@@ -21,11 +25,12 @@ async def set_menu_button(app):
 
 # Logs
 def log_user(user):
-    logs = load_from_json("logs").get("logs", [])
+    logs_data = load_from_json("logs") or {}
+    logs = logs_data.get("logs", [])
     logs.append({
         "user_id": user.id,
         "name": user.full_name,
-        "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        "time": datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S")
     })
     save_to_json("logs", {"logs": logs})
 
@@ -160,11 +165,15 @@ async def cb(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         await q.message.reply_text(f"✅ Subject *{subj}* deleted.", parse_mode="Markdown")
 
     elif cbk == "log":
-        logs = load_from_json("logs").get("logs", [])
-        msg = "📄 *User Log (latest 20)*\n\n"
-        for e in logs[-20:]:
-            msg += f"👤 {e['name']} | {e['user_id']} | {e['time']}\n"
-        await q.message.reply_text(msg, parse_mode="Markdown")
+        logs_data = load_from_json("logs") or {}
+        logs = logs_data.get("logs", [])
+        if not logs:
+            await q.message.reply_text("📭 No user logs available.")
+        else:
+            msg = "📄 *User Log (latest 20)*\n\n"
+            for e in logs[-20:]:
+                msg += f"👤 {e['name']} | {e['user_id']} | {e['time']}\n"
+            await q.message.reply_text(msg, parse_mode="Markdown")
 
     elif cbk == "suggest":
         await q.message.reply_text("💬 Send your suggestion now. It will be sent to the admin.")
@@ -215,7 +224,7 @@ async def suggestions(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         "from": update.effective_user.full_name,
         "id": update.effective_user.id,
         "text": update.message.text,
-        "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        "time": datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S")
     }
     sug = load_from_json("suggestions") or {}
     sug.setdefault("suggestions", []).append(entry)
@@ -232,12 +241,33 @@ async def ping():
 
 def start_fastapi():
     import uvicorn
-    uvicorn.run(app_web, host="0.0.0.0", port=10000)
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run(app_web, host="0.0.0.0", port=port)
+    
+async def auto_backup_task(app):
+    await asyncio.sleep(10)  # Delay startup by 10 seconds
+    while True:
+        print("🕒 Auto-backup started…", flush=True)
+        for fname in ["data.json", "logs.json", "suggestions.json"]:
+            if os.path.exists(fname):
+                try:
+                    with open(fname, "rb") as f:
+                        await app.bot.send_document(chat_id=ADMIN_ID, document=InputFile(f, filename=fname))
+                except Exception as e:
+                    print(f"❌ Failed to send {fname}: {e}")
+        # ✅ Send confirmation with timestamp
+        timestamp = datetime.now(IST).strftime("%Y-%m-%d %H:%M:%S")
+        try:
+            await app.bot.send_message(chat_id=ADMIN_ID, text=f"✅ Auto-backup completed at: {timestamp}")
+        except Exception as e:
+            print(f"❌ Failed to send backup timestamp message: {e}")
+        await asyncio.sleep(86400)  # Wait 24 hours
 
 # MAIN
 if __name__ == "__main__":
     app = ApplicationBuilder().token(TOKEN).build()
     app.post_init = set_menu_button
+
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("newsemester", newsemester))
     app.add_handler(CommandHandler("newsubject", newsubject))
@@ -248,6 +278,7 @@ if __name__ == "__main__":
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, suggestions))
 
     Thread(target=start_fastapi).start()
+    asyncio.get_event_loop().create_task(auto_backup_task(app))
     print("🤖 Bot running …", flush=True)
     app.run_polling()
 
