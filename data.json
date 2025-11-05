@@ -247,12 +247,24 @@
         "BQACAgUAAxkBAAIBI2hXiM0JrtbCOWJYAAFCl6iklTTdpwAC6hsAAkJjwFYh9z3mvxcC0zYE",
         "BQACAgUAAxkBAAIBJWhXiNPEn9Ov-6VCV4fvZ8pRWgZBAALsGwACQmPAVkdi6-DjvU2DNgQ",
         "BQACAgUAAxkBAAIBJ2hXiNY7b5TjAAH5vxRAGXytNleCtAAC7RsAAkJjwFYj_j5OEk5KETYE",
-        "BQACAgUAAxkBAAIBKWhXiNeIWb41hgfVwMjZgNjlSYywAALuGwACQmPAVnEKpv00Ip3WNgQ"
+        "BQACAgUAAxkBAAIBKWhXiNeIWb41hgfVwMjZgNjlSYywAALuGwACQmPAVnEKpv00Ip3WNgQ",
+        "BQACAgUAAxkBAAII3WkLL8opduSt-gNYfiSpVQ476p5kAAKMGQACb39ZVFi-JC4qoj8TNgQ",
+        "BQACAgUAAxkBAAII32kLL85OymC-livq8U7xh1OkXg07AAKNGQACb39ZVKHd-1wJ9fA3NgQ",
+        "BQACAgUAAxkBAAII7WkLMvnt5F_CZ1dc_wOIcVZjURe4AAKTGQACb39ZVM_GBqlz9qYDNgQ",
+        "BQACAgUAAxkBAAII7mkLMvmFAVy9o4lN0nkwCHZjq6aIAAKUGQACb39ZVJBWAAEmKyeByzYE"
       ],
-      "Important Topics": [],
+      "Important Topics": [
+        "BQACAgUAAxkBAAIIbmkLKqPhP8SwotnDYskndxwBKoCPAAJIGQACb39ZVFoUeRC0kHpKNgQ"
+      ],
       "Voice Recordings": [],
       "Video Classes": [],
-      "PYQs": []
+      "PYQs": [
+        "BQACAgUAAxkBAAII9GkLM9-TcqsPl2dOleZiOP4MT7GYAAKeGQACb39ZVIEflUMFzrbaNgQ",
+        "BQACAgUAAxkBAAII9WkLM-DTgHtw49RiaoYWUVrrT0zzAAKfGQACb39ZVEKQapnemws7NgQ",
+        "BQACAgUAAxkBAAII92kLM-KvJJe8tth4OLYTTbQxDh4PAAKgGQACb39ZVK-zkGIkPpoYNgQ",
+        "BQACAgUAAxkBAAII-WkLM-OnFdHLtWS2RogJU7mMM5UuAAKhGQACb39ZVLfVOX3DATOmNgQ",
+        "BQACAgUAAxkBAAII_GkLM-SZipbyDZiSIUycrFtLf_eTAAKiGQACb39ZVF1wyj1Z1vGsNgQ"
+      ]
     },
     "Management of Software System": {
       "Syllabus": [
@@ -271,11 +283,16 @@
         "BQACAgUAAxkBAAIBP2hXiTT797wuBNYkzL_s732HfQWxAAL6GwACQmPAVrTmRNlJkwojNgQ"
       ],
       "Important Topics": [
-        "BQACAgUAAxkBAAIBRWhXiVxbk9tqdK5GmFd7E7DYHsNnAAL8GwACQmPAViSVVUdMoRxXNgQ"
+        "BQACAgUAAxkBAAIBRWhXiVxbk9tqdK5GmFd7E7DYHsNnAAL8GwACQmPAViSVVUdMoRxXNgQ",
+        "BQACAgUAAxkBAAIIdmkLKuHKTv1wxRq5c4Yx8J2U4FHnAAJJGQACb39ZVOeA1MmdYRHdNgQ"
       ],
       "Voice Recordings": [],
       "Video Classes": [],
-      "PYQs": []
+      "PYQs": [
+        "BQACAgUAAxkBAAIJAWkLNKpXy1mc1wzEcF-t8ppeRi9JAALZGAACb39hVKx53ybWteM5NgQ",
+        "BQACAgUAAxkBAAIJAmkLNKsrutAaGkK_XEFaf4I3nq5pAALaGAACb39hVLTu3jWFak8bNgQ",
+        "BQACAgUAAxkBAAIJBGkLNKtCCjNAEhIAASqlf1lk1WnqbgAC2xgAAm9_YVTsvKmJ2d1ibzYE"
+      ]
     },
     "Microprocessors and Microcontrollers": {
       "Syllabus": [
@@ -287,12 +304,24 @@
         "BQACAgUAAxkBAAIBUGhXjIg1-SyJjG8ZOeX0SMiSEgZuAAIZHAACQmPAVp5hOAKOJsAwNgQ",
         "BQACAgUAAxkBAAIBUmhXjIkVJWlXgZpgRYE5siU94NyYAAIaHAACQmPAVgiIYv7AaoSkNgQ",
         "BQACAgUAAxkBAAIBVGhXjIoOBnOI_171guWL4eVAiLFsAAIbHAACQmPAVnNlPwX7lYE5NgQ",
-        "BQACAgUAAxkBAAIBVmhXjJ2ZQiJes0zuTOa69p-YXg2nAAIdHAACQmPAVjXvB2HSHyxnNgQ"
+        "BQACAgUAAxkBAAIBVmhXjJ2ZQiJes0zuTOa69p-YXg2nAAIdHAACQmPAVjXvB2HSHyxnNgQ",
+        "BQACAgUAAxkBAAIIAAFpCyVMHPzViHammM-pqeH9B0R5NAACKhkAAm9_WVTVezEZqhG9OzYE",
+        "BQACAgUAAxkBAAIIR2kLJ63YLl91MQ7s4I5RLYMZR7seAAI3GQACb39ZVHRl4vEdHVxRNgQ",
+        "BQACAgUAAxkBAAIISWkLJ7DKlC_ygU8guRYyNlgAAZeJ3gACOBkAAm9_WVR7r0fKjQ1kxzYE",
+        "BQACAgUAAxkBAAIIS2kLJ7H2OsTV-FQK-ezt9vVW5DoKAAI5GQACb39ZVHIHYlbgYS09NgQ",
+        "BQACAgUAAxkBAAIITGkLJ7LciF99_3QN7GA7XMeuYevgAAI6GQACb39ZVFfSHP_qpbnMNgQ"
       ],
-      "Important Topics": [],
+      "Important Topics": [
+        "BQACAgUAAxkBAAIIaWkLKh3Bi8UBS6U-IkgNY25WG85fAAJFGQACb39ZVHZFL0YCxR9yNgQ"
+      ],
       "Voice Recordings": [],
       "Video Classes": [],
-      "PYQs": []
+      "PYQs": [
+        "BQACAgUAAxkBAAIIUmkLJ9_nUNNXJ4Puk6wSO81dmBU6AAI7GQACb39ZVNAVPedz4AjUNgQ",
+        "BQACAgUAAxkBAAIIVGkLJ_yiaz0opAZOWMARwrdWGbGwAAI8GQACb39ZVCVO_zcRWvs8NgQ",
+        "BQACAgUAAxkBAAIIVmkLKBIyBvvhjSmlMlPj346B2gVnAAI9GQACb39ZVGf4V75V_6zHNgQ",
+        "BQACAgUAAxkBAAIIWGkLKCfGM57jUVl4a9lYe9cQthZNAAI-GQACb39ZVGN8F3Lv1-pZNgQ"
+      ]
     },
     "Computer Network": {
       "Syllabus": [
@@ -308,14 +337,36 @@
         "BQACAgUAAxkBAAIBZ2hXjQ_2TInZF8UYHxiGhJWsDtxwAAI5HAACQmPAVuyNA5sFkf8sNgQ",
         "BQACAgUAAxkBAAIBaWhXjRSj5HH_YnlB-3SUytmASM4UAAI6HAACQmPAVr2SNi2HIZjiNgQ",
         "BQACAgUAAxkBAAIBa2hXjRgWbSc4pufS0dKErWlwf1IlAAI7HAACQmPAVlWoewyCcurzNgQ",
-        "BQACAgUAAxkBAAIBbWhXjR3ptFmn4nMNV9EF5HJ7fAlNAAI8HAACQmPAVt6u_XU9Q7E3NgQ"
+        "BQACAgUAAxkBAAIBbWhXjR3ptFmn4nMNV9EF5HJ7fAlNAAI8HAACQmPAVt6u_XU9Q7E3NgQ",
+        "BQACAgUAAxkBAAIIx2kLLgOR1erH5FWL6i_6HOqn4DxfAAJvGQACb39ZVJnUjYbMQZDVNgQ",
+        "BQACAgUAAxkBAAIIyGkLLgSl9b5yRDyZMqRhwg78kXaMAAJwGQACb39ZVFKP26eDMlpDNgQ",
+        "BQACAgUAAxkBAAIIy2kLLgfMnsz5RGBdkyPzCHUtXNj1AAJxGQACb39ZVIYwvE8BQhhANgQ",
+        "BQACAgUAAxkBAAIIzWkLLgrm7eRp8dVWtWOvw-lFnATZAAJyGQACb39ZVODpfvM8a-pyNgQ",
+        "BQACAgUAAxkBAAIIz2kLLguXfityFN_0l-Qei69vSBeaAAJzGQACb39ZVFQ2AAF44hYd3jYE",
+        "BQACAgUAAxkBAAII0GkLLgvoYgyW40X7-W_DjPSHnrc8AAJ0GQACb39ZVHV4A5jZYXSRNgQ"
       ],
       "Important Topics": [
-        "BQACAgUAAxkBAAIBcmhXjTbKtbLQSLs43QX3U3o_hrEgAAJCHAACQmPAVme7YkVAYDWPNgQ"
+        "BQACAgUAAxkBAAIBcmhXjTbKtbLQSLs43QX3U3o_hrEgAAJCHAACQmPAVme7YkVAYDWPNgQ",
+        "BQACAgUAAxkBAAIIfmkLKwlSx5yw8xcYaCwzh_5yUSYNAAJNGQACb39ZVKyIziHdBdhONgQ"
       ],
       "Voice Recordings": [],
       "Video Classes": [],
-      "PYQs": []
+      "PYQs": [
+        "BQACAgUAAxkBAAIInGkLLKHl_SulPn0_3HPggaLuTrgDAAJcGQACb39ZVMqQEgABVo4jxzYE",
+        "BQACAgUAAxkBAAIInWkLLKFNmE2ZEDPOgXJfFr-WiE9sAAJdGQACb39ZVLMdO2o1qTmxNgQ",
+        "BQACAgUAAxkBAAIInmkLLKGH-IWlZ-ixgWb1fMex7XeYAAJeGQACb39ZVHdQhWK5h0dlNgQ",
+        "BQACAgUAAxkBAAIIn2kLLKEQbBWfJaVCWII_naAj3calAAJfGQACb39ZVOSZODPib_wZNgQ",
+        "BQACAgUAAxkBAAIIoGkLLKKatA0c9dhnYZRSqr_rJGvaAAJgGQACb39ZVCSlt9ML1T6XNgQ",
+        "BQACAgUAAxkBAAIIoWkLLKJ3Cv_So2IDfz7OjWSSmBHQAAJhGQACb39ZVMsAARFSiBrC-jYE",
+        "BQACAgUAAxkBAAIIo2kLLKON1a1apdkoT3BcHJa8cE26AAJiGQACb39ZVLMet0iYPSFPNgQ",
+        "BQACAgUAAxkBAAIIpGkLLKS2Zn06891DUP-9569aLs6TAAJjGQACb39ZVMPjFL2FL6qJNgQ",
+        "BQACAgUAAxkBAAIIpmkLLKQCW8tJ9V7eAV-gqrfqw3aPAAJkGQACb39ZVBtYbK1jcZaYNgQ",
+        "BQACAgUAAxkBAAIIp2kLLKQ96Fl4RNv0qV9HkZc5WkCZAAJlGQACb39ZVK9DmpT-nICnNgQ",
+        "BQACAgUAAxkBAAIIqGkLLKXpBZ0qa1WQZHytKLsz1BiiAAJmGQACb39ZVOSWS5Y3d4R-NgQ",
+        "BQACAgUAAxkBAAIIqmkLLKUVxFGn0XjskCUn0IsNhJqlAAJnGQACb39ZVOrKEoOe9fVxNgQ",
+        "BQACAgUAAxkBAAIIq2kLLKZ7tVvR1M-5ZKVszYh3nWZuAAJoGQACb39ZVMRgs2957Eu0NgQ",
+        "BQACAgUAAxkBAAIIrWkLLKbCn-fzZzT9_mQwuuI7PC0SAAJpGQACb39ZVG4OJjTPas2DNgQ"
+      ]
     },
     "System Software": {
       "Syllabus": [
@@ -329,10 +380,16 @@
         "BQACAgUAAxkBAAIEg2hffeekju8jyFTBA8kbhFVYNlYvAAJuGgACaWf4Vp-E97gPjrbFNgQ",
         "BQACAgUAAxkBAAIFxGh5DK19EewkqS1RhxJsh5jJa6P0AAMZAAIfHMlX7uqVp_Gei382BA"
       ],
-      "Important Topics": [],
+      "Important Topics": [
+        "BQACAgUAAxkBAAIIg2kLKyWy0Yw4RN5XW6x-vApeCQd_AAJPGQACb39ZVNmuRMJRCFrrNgQ"
+      ],
       "Voice Recordings": [],
       "Video Classes": [],
-      "PYQs": []
+      "PYQs": [
+        "BQACAgUAAxkBAAIJCmkLNQOcj3xsh202rjwiZBR_eYA_AALgGAACb39hVC-i2fk-wP2gNgQ",
+        "BQACAgUAAxkBAAIJC2kLNQQETXBto4SX0tWvOC_UbTcHAALhGAACb39hVKTGlmDWQaAVNgQ",
+        "BQACAgUAAxkBAAIJDGkLNQQAAX55Gab4YZdzKv6NjPOY4QAC4hgAAm9_YVS8Rht1zWW_AzYE"
+      ]
     },
     "Disaster Management": {
       "Syllabus": [
@@ -352,11 +409,16 @@
         "BQACAgUAAxkBAAIEbWhfe8QVNMtRFGgn7elJwKCh9xgEAAJkGgACaWf4VqwPsp76fkKONgQ"
       ],
       "Important Topics": [
-        "BQACAgUAAxkBAAIBkWhXjxRPbwKOi7DcuDBGtqQk4fXmAAJSHAACQmPAVupBy9trbb30NgQ"
+        "BQACAgUAAxkBAAIBkWhXjxRPbwKOi7DcuDBGtqQk4fXmAAJSHAACQmPAVupBy9trbb30NgQ",
+        "BQACAgUAAxkBAAIIl2kLK0YL6wQ3WR__lawk1nXk-e1UAAJTGQACb39ZVM0jh7Lx7eX-NgQ"
       ],
       "Voice Recordings": [],
       "Video Classes": [],
-      "PYQs": []
+      "PYQs": [
+        "BQACAgUAAxkBAAIJE2kLNW8FYzUsjYyiribAeap-R_EVAALlGAACb39hVEvy8wbJDn79NgQ",
+        "BQACAgUAAxkBAAIJFGkLNW9EUqf0qmmy5Gd-Dl43n0r0AALmGAACb39hVM41KcJru7gBNgQ",
+        "BQACAgUAAxkBAAIJFWkLNW_31icFBlvmaH_2gQ2yEn7KAALnGAACb39hVLe0QQjt6anyNgQ"
+      ]
     }
   }
 }
