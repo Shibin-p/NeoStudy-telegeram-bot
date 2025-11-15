@@ -230,7 +230,7 @@ async def suggestions(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     sug.setdefault("suggestions", []).append(entry)
     save_to_json("suggestions", sug)
     await update.message.reply_text("✅ Thank you for your suggestion!\n\n"
-                                   "💡 If you where trying to use the bot, please type /start \n"
+                                   "💡 If you were trying to use the bot, please type /start \n"
                                    "or you can use the menu button on the bottom left corner")
     await ctx.bot.send_message(chat_id=ADMIN_ID, text=f"📩 Suggestion from {entry['from']}:\n{entry['text']}")
 
