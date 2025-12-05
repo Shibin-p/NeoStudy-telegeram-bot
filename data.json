@@ -2,7 +2,13 @@
   "S1": {
     "Maths": {
       "Syllabus": [],
-      "Notes": [],
+      "Notes": [
+        "BQACAgUAAxkBAAId0WkyV6WWjwR8KedqV1taO9kEiSpIAAJQHQACREmRVUX8b5G3Tm4sNgQ",
+        "BQACAgUAAxkBAAId0mkyV6Uzw6j-SHpJj73frSzDbwqSAAJRHQACREmRVSBdl4omK8kKNgQ",
+        "BQACAgUAAxkBAAId02kyV6WlOAAB1Z-vHv_evyKR7ODofwACUh0AAkRJkVUYBSzoC67x9TYE",
+        "BQACAgUAAxkBAAId1GkyV6WQQCmmyLsHskloD9BAamfKAAJTHQACREmRVVqZMYH50dCINgQ",
+        "BQACAgUAAxkBAAId1WkyV6Uqf4btItOhuU7fdzjlw37tAAJUHQACREmRVX27G3aIzmihNgQ"
+      ],
       "Important Topics": [],
       "Voice Recordings": [],
       "Video Classes": [],
@@ -10,23 +16,13 @@
     },
     "Physics": {
       "Syllabus": [],
-      "Notes": [],
-      "Important Topics": [],
-      "Voice Recordings": [],
-      "Video Classes": [],
-      "PYQs": []
-    },
-    "BCE": {
-      "Syllabus": [],
-      "Notes": [],
-      "Important Topics": [],
-      "Voice Recordings": [],
-      "Video Classes": [],
-      "PYQs": []
-    },
-    "BME": {
-      "Syllabus": [],
-      "Notes": [],
+      "Notes": [
+        "BQACAgUAAxkBAAId3mkyWQhHPLGWYQRCYIos7sctqEPVAAJaHQACREmRVagIAAHVleaPZTYE",
+        "BQACAgUAAxkBAAId32kyWQjEKo7v1imZSPZ6AAHBZWm9jQACWx0AAkRJkVXtyoGa--2NlDYE",
+        "BQACAgUAAxkBAAId4GkyWQjUU_i2zu_zYF5HVRpWTYb_AAJcHQACREmRVQ49dvv6VjeUNgQ",
+        "BQACAgUAAxkBAAId4WkyWQhPIUd9GnB_nQti549lLeNLAAJdHQACREmRVRzFxrDTn_kcNgQ",
+        "BQACAgUAAxkBAAId4mkyWQjxjFvSCqoR0FZoyl0eJuH_AAJeHQACREmRVXJmBWBZ0NztNgQ"
+      ],
       "Important Topics": [],
       "Voice Recordings": [],
       "Video Classes": [],
@@ -34,7 +30,13 @@
     },
     "Graphics": {
       "Syllabus": [],
-      "Notes": [],
+      "Notes": [
+        "BQACAgUAAxkBAAId62kyWTQgX0MB2Nd--XCJjooK_NmkAAJVHQACREmRVYS3rZDcwibCNgQ",
+        "BQACAgUAAxkBAAId7GkyWTQeBgKj0nYu0tONVs2tWP4dAAJWHQACREmRVfTR6GOrSZo1NgQ",
+        "BQACAgUAAxkBAAId7WkyWTSYmkNCErbmbCz2YZia9VHCAAJXHQACREmRVXTq3Na0SM1bNgQ",
+        "BQACAgUAAxkBAAId7mkyWTRj9BEeuzo0882D1iDxEh2PAAJYHQACREmRVQk6uE_bmEDQNgQ",
+        "BQACAgUAAxkBAAId72kyWTRBpMjqrWRT6RBXDk_G28_XAAJZHQACREmRVSmxKYjFnKs0NgQ"
+      ],
       "Important Topics": [],
       "Voice Recordings": [],
       "Video Classes": [],
@@ -42,7 +44,28 @@
     },
     "Life skills": {
       "Syllabus": [],
-      "Notes": [],
+      "Notes": [
+        "BQACAgUAAxkBAAId-GkyWWxaq9408bnmc4Txdk059THGAAJlHQACREmRVW7VoYs1xhxtNgQ",
+        "BQACAgUAAxkBAAId-WkyWWxbJtMc9foDwaVXIQgPbdubAAJmHQACREmRVd7fd8unGAABRTYE",
+        "BQACAgUAAxkBAAId-mkyWWwxua8NHigB3XhTnVKCuAk6AAJnHQACREmRVZ2jslmih_NsNgQ",
+        "BQACAgUAAxkBAAId-2kyWWwWbNvxUbT0AAHR9PkIW1j7KAACaB0AAkRJkVUrBbhYt2BIUTYE",
+        "BQACAgUAAxkBAAId_GkyWWyxXFTGUxc-P1ch5Sqv9DwnAAJpHQACREmRVUObx-nt47OwNgQ"
+      ],
+      "Important Topics": [],
+      "Voice Recordings": [],
+      "Video Classes": [],
+      "PYQs": []
+    },
+    "BCE/BME": {
+      "Syllabus": [],
+      "Notes": [
+        "BQACAgUAAxkBAAIeBWkyWZVZf0Ztjg4_OqPYwV_ZFbVOAAJfHQACREmRVeL-PMNxIL8TNgQ",
+        "BQACAgUAAxkBAAIeBmkyWZVXIoxsMBahDJZ5hzt3EVPgAAJgHQACREmRVYzE57SB3FTdNgQ",
+        "BQACAgUAAxkBAAIeB2kyWZXZJh3y8fzdQvPK6rlLZwMGAAJhHQACREmRVUFxVc5-AgpBNgQ",
+        "BQACAgUAAxkBAAIeCGkyWZWJCRqI70vVo0pvMY4ZolJIAAJiHQACREmRVUqqBqeamjOSNgQ",
+        "BQACAgUAAxkBAAIeCWkyWZUCEeY7foze4Gz5bhMaPcMLAAJjHQACREmRVfgYkxxDhx33NgQ",
+        "BQACAgUAAxkBAAIeCmkyWZV_09iz0jfj5j6gKOKtrwj7AAJkHQACREmRVRZGftv9V1reNgQ"
+      ],
       "Important Topics": [],
       "Voice Recordings": [],
       "Video Classes": [],
@@ -52,31 +75,28 @@
   "S2": {
     "Chemistry": {
       "Syllabus": [],
-      "Notes": [],
-      "Important Topics": [],
-      "Voice Recordings": [],
-      "Video Classes": [],
-      "PYQs": []
-    },
-    "BEE": {
-      "Syllabus": [],
-      "Notes": [],
-      "Important Topics": [],
-      "Voice Recordings": [],
-      "Video Classes": [],
-      "PYQs": []
-    },
-    "BEC": {
-      "Syllabus": [],
-      "Notes": [],
-      "Important Topics": [],
+      "Notes": [
+        "BQACAgUAAxkBAAIdeWkxwaYd86ngciTDdVWwHRK0EDWTAAJzHQACREmRVQp8PCkxQRWINgQ",
+        "BQACAgUAAxkBAAIdemkxwad9P0zgFidS_2Q7C1ToUqrLAAJ0HQACREmRVS6PKxfx5kv-NgQ",
+        "BQACAgUAAxkBAAIdfGkxwahVbtYWKdTq89kuay7Ndu3QAAJ1HQACREmRVWDKtzKNd9dLNgQ",
+        "BQACAgUAAxkBAAIdfmkxwan-xaDYEyIJcZZlj2jolnFBAAJ2HQACREmRVenOEXjir6ZHNgQ",
+        "BQACAgUAAxkBAAIdf2kxwaky1Aw9bvl9zsobqOwvJhWkAAJ3HQACREmRVWJiMjx5X5HKNgQ"
+      ],
+      "Important Topics": [
+        "BQACAgUAAxkBAAIdhmkxwcIGh1Q5EjihOQGk3rjLwuC4AAJ4HQACREmRVd5x19JWcTpfNgQ"
+      ],
       "Voice Recordings": [],
       "Video Classes": [],
       "PYQs": []
     },
     "Mechanics": {
       "Syllabus": [],
-      "Notes": [],
+      "Notes": [
+        "BQACAgUAAxkBAAIdkmkxwexjVLvAkmObKzkLRQaQ4gduAAJ5HQACREmRVY2pY6HLe3ykNgQ",
+        "BQACAgUAAxkBAAIdlGkxwe84SttWzYWhWQTqby8LtYJhAAJ6HQACREmRVRGomq7fjnxrNgQ",
+        "BQACAgUAAxkBAAIdlmkxwfNwJlSzSy0icSHQ0raq4CrnAAJ7HQACREmRVR-Jb4qRJZ1dNgQ",
+        "BQACAgUAAxkBAAIdmGkxwfatpk_YdwP_6CN99mj9SGsUAAJ8HQACREmRVeN97ga_5zJ9NgQ"
+      ],
       "Important Topics": [],
       "Voice Recordings": [],
       "Video Classes": [],
@@ -84,7 +104,13 @@
     },
     "Professional Communication": {
       "Syllabus": [],
-      "Notes": [],
+      "Notes": [
+        "BQACAgUAAxkBAAIdnmkxwjnuSmq4jGm4giievxTa4iIqAAJ9HQACREmRVUlaznuiVp4INgQ",
+        "BQACAgUAAxkBAAIdoGkxwkFZEmus6xG7HeEH4Qn5Rj5NAAJ-HQACREmRVT73JqHyYcTrNgQ",
+        "BQACAgUAAxkBAAIdomkxwkm0njdpt0ZAqfo_4q73I08HAAJ_HQACREmRVXQzbf6wQ3UiNgQ",
+        "BQACAgUAAxkBAAIdpGkxwlHdNmxiraNHWICRdwZMq1RKAAKAHQACREmRVT55tacXKJL6NgQ",
+        "BQACAgUAAxkBAAIdpmkxwl9SU4IxHEsiJo-LjTXXpxNqAAKBHQACREmRVa7q3QZPqhRANgQ"
+      ],
       "Important Topics": [],
       "Voice Recordings": [],
       "Video Classes": [],
@@ -92,7 +118,13 @@
     },
     "Maths": {
       "Syllabus": [],
-      "Notes": [],
+      "Notes": [
+        "BQACAgUAAxkBAAIdq2kxwpgLqspFy6GHwBMU0Q3g36-SAAKCHQACREmRVQOfqInp5P5wNgQ",
+        "BQACAgUAAxkBAAIdrWkxwp92v3_AfxG4u6-RfGU0sA4cAAKDHQACREmRVbKVSLxSwgLsNgQ",
+        "BQACAgUAAxkBAAIdr2kxwqb0KX9hqAGTppo5LENWuxJcAAKEHQACREmRVXYyRt01hed_NgQ",
+        "BQACAgUAAxkBAAIdsWkxwqyMcFQQBOKMVxaCxmotvnbKAAKFHQACREmRVcbJiGzfMPCONgQ",
+        "BQACAgUAAxkBAAIds2kxwq-kOqOc3NutMeiCYSEKSxHFAAKGHQACREmRVSOCcj705wyuNgQ"
+      ],
       "Important Topics": [],
       "Voice Recordings": [],
       "Video Classes": [],
@@ -135,6 +167,21 @@
         "BQACAgUAAxkBAAIC3GhYQkvZ4WZwcVnYXTTR_wlVylsqAAKeFQACOIvBVprj3KH0gPwxNgQ",
         "BQACAgUAAxkBAAIC3WhYQktJN1k2RR-hwSu1BhBIEK0LAAKfFQACOIvBVrxTvoRjgQ5kNgQ"
       ]
+    },
+    "BEE/BEC": {
+      "Syllabus": [],
+      "Notes": [
+        "BQACAgUAAxkBAAIduGkxwtkfCOKIiLvScAizjIL2d2Z6AAKHHQACREmRVdFSdQT3pIdWNgQ",
+        "BQACAgUAAxkBAAIdumkxwtp-XPJE8PLJ9bfH7dOi82IsAAKIHQACREmRVWqnhWHvSsCdNgQ",
+        "BQACAgUAAxkBAAIdvGkxwt3vtbNcdXdQOGh8KXcq1mfDAAKJHQACREmRVbZLkZPEKmceNgQ",
+        "BQACAgUAAxkBAAIdvWkxwt31OhLQHk1KcwuvnJx-0Zj1AAKKHQACREmRVeWQ4wVGusUjNgQ",
+        "BQACAgUAAxkBAAIdv2kxwt4AAf86B06y8K3fmDx76MnFXAACix0AAkRJkVUQ36oBNZXoiDYE",
+        "BQACAgUAAxkBAAIdwWkxwuAg24bKT3eJY_P-9zdMCBuGAAKMHQACREmRVQABA3Cr1RWd0DYE"
+      ],
+      "Important Topics": [],
+      "Voice Recordings": [],
+      "Video Classes": [],
+      "PYQs": []
     }
   },
   "S3": {
